@@ -2,8 +2,9 @@
 <p>The project's goal is the creation a management system for a gym. The gym could have different features:<p>
 <ul>
   <li>Adding new users;</li>
-  <li>Schedule about training;</li>
-  <li>Show informations about training plan.</li>
+  <li>Creating the training plan;</li>
+  <li>Show informations about training plan;</li>
+  <li>Ecc.</li>
 </ul>
 
 <h2>Main technologies</h2>
