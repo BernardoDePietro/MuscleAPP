@@ -1,12 +1,15 @@
 package com.muscle.demo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.Data;
 
 @Data
-@Entity
+@Entity(name = "serie")
 public class Serie {
 	private @Id @GeneratedValue Long id_serie;
 	private int ripetizioni;

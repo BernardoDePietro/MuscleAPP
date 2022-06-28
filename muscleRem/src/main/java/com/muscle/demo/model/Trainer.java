@@ -3,16 +3,24 @@ package com.muscle.demo.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.Data;
 
 @Data
-@Entity
+@Entity(name = "trainer")
 public class Trainer {
 	private @Id @GeneratedValue Long id_trainer;
 	private String nome;
 	private String cognome;
 	private String email;
 	private String password;
+	
+	//Relazioni
+	@ManyToOne
+	@JoinColumn(name = "id_palestra")
+	private Palestra palestra;
+	
 	
 	Trainer() {}
 

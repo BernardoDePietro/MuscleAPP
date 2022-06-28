@@ -1,18 +1,34 @@
 package com.muscle.demo.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 import lombok.Data;
 
 @Data
-@Entity
+@Entity(name = "palestra")
 public class Palestra {
 	private @Id @GeneratedValue Long id_palestra;
 	private String nome;
 	private String via;
 	private int civico;
 	private String citta;
+	
+	//Relazioni
+	@OneToMany(mappedBy = "palestra")
+	private List<Trainer> trainers;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_admin")
+	private Admin admin;
+	
+	
 	
 	public Palestra() {}
 	
